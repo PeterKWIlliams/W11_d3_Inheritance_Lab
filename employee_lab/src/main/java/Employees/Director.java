@@ -1,4 +1,5 @@
 package Employees;
 
-public class Director {
+public class Director  {
+
 }

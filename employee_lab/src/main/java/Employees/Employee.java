@@ -1,9 +1,9 @@
 package Employees;
 
 public abstract class Employee {
-    private String name;
-    private String nino;
-    private double salary;
+    protected String name;
+    protected String nino;
+    protected double salary;
 
     public Employee(String name, String nino, double salary) {
         this.name = name;
@@ -35,7 +35,11 @@ public abstract class Employee {
         return salary;
     }
 
-    public abstract void raiseSalary(double increment);
-    public abstract double payBonus();
+    public void raiseSalary(double increment){
+        this.salary = this.salary + (this.salary * (increment/100));
+    }
+    public  double payBonus(){
+        return this.salary * 0.01;
+    }
 
 }
