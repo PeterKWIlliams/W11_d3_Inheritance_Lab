@@ -1,5 +1,6 @@
 package EmployeesTest;
 
+import Employees.DatabaseAdmin;
 import Employees.Developer;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,33 +9,32 @@ import static org.junit.Assert.assertEquals;
 
 public class DatabaseAdminTest {
 
-    Developer developer;
+    DatabaseAdmin databaseAdmin;
     @Before
     public void before(){
-        developer = new Developer("Williams","SK243767B",200000);
+        databaseAdmin = new DatabaseAdmin("Mordaunt","JG073973B",16000);
     }
 
     @Test
     public void hasName(){
-        assertEquals("Williams", developer.getName());
+        assertEquals("Mordaunt", databaseAdmin.getName());
     }
     @Test
     public void hasNino(){
-        assertEquals("SK243767B", developer.getNino());
+        assertEquals("JG073973B", databaseAdmin.getNino());
     }
     @Test
     public void hasSalary(){
-        assertEquals(200000.00, developer.getSalary(), 0.0);
+        assertEquals(16000, databaseAdmin.getSalary(), 0.0);
     }
 
     @Test
     public void canRaiseSalary(){
-        developer.raiseSalary(10);
-        assertEquals(220000, developer.getSalary(), 0.0);
+        databaseAdmin.raiseSalary(10);
+        assertEquals(17600, databaseAdmin.getSalary(), 0.0);
     }
     @Test
     public void canPayBonus(){
-
-        assertEquals(2000, developer.payBonus(), 0.0);
+        assertEquals(160, databaseAdmin.payBonus(), 0.0);
     }
 }
