@@ -20,6 +20,7 @@ public abstract class Employee {
     }
 
     public void setName(String name) {
+        if(name ==""|| name == null){return;}
         this.name = name;
     }
 
@@ -36,7 +37,9 @@ public abstract class Employee {
     }
 
     public void raiseSalary(double increment){
+        if(increment<0){increment *= -1;}
         this.salary = this.salary + (this.salary * (increment/100));
+
     }
     public  double payBonus(){
         return this.salary * 0.01;

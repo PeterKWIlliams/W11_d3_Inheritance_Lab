@@ -37,4 +37,17 @@ public class ManagerTest {
 
         assertEquals(500.00,manager.payBonus(),0.0);
     }
+
+    @Test
+    public void payRiseCantBeNegative(){
+        manager.raiseSalary(-1);
+        assertEquals(50500.00,manager.getSalary(),0.0);
+    }
+
+    @Test
+    public void cantChangeNameWithInvalidInput(){
+        manager.setName("");
+        assertEquals("Smith",manager.getName());
+
+    }
 }
