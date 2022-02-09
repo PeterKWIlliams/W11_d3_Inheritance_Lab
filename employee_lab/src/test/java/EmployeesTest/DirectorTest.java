@@ -1,5 +1,6 @@
 package EmployeesTest;
 
+import Employees.Director;
 import Employees.Manager;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,33 +9,38 @@ import static org.junit.Assert.assertEquals;
 
 public class DirectorTest {
 
-    Manager manager;
+    Director director;
     @Before
     public void before(){
-        manager = new Manager("Smith","SK474314Z",50000);
+        director = new Director("Green","SK4743143",500000,2000000);
     }
 
     @Test
     public void hasName(){
-        assertEquals("Smith",manager.getName());
+        assertEquals("Green",director.getName());
     }
     @Test
     public void hasNino(){
-        assertEquals("SK474314Z",manager.getNino());
+        assertEquals("SK4743143",director.getNino());
     }
     @Test
     public void hasSalary(){
-        assertEquals(50000.00,manager.getSalary(),0.0);
+        assertEquals(500000.00,director.getSalary(),0.0);
     }
 
     @Test
-    public void canRaiseSalary(){
-        manager.raiseSalary(1);
-        assertEquals(50500.00,manager.getSalary(),0.0);
+    public void hasBudget(){
+        assertEquals(2000000,director.getBudget(),0.0);
+    }
+
+    @Test
+    public void canRaiseSalary(){director.raiseSalary(0.05);
+        assertEquals(500250,director.getSalary(),0.0);
     }
     @Test
     public void canPayBonus(){
-
-        assertEquals(500.00,manager.payBonus(),0.0);
+        assertEquals(10000.00,director.payBonus(),0.0);
     }
+
+
 }
